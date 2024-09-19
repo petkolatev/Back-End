@@ -9,3 +9,4 @@ JS Back-End Course Workshop @SoftUni
  2. Setup express
  3. Setup handlebars
  4. Add resources
+ 5. Setup static route
