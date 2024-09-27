@@ -29,8 +29,11 @@ JS Back-End Course Workshop @SoftUni
  8. Show cast in details page
    
 Bonus:
- - [ ] Add model validations
+ - [x] Rating helper
  - [ ] Fix filtering for movies
- - [ ] Add character name
  - [ ] Filter cast based on added ones
+ - [ ] Add character name
  - [ ] Atlas
+
+Next time:
+ - [ ] Add model validations
