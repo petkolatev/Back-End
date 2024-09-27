@@ -21,5 +21,12 @@ JS Back-End Course Workshop @SoftUni
 ## Developing Steps - Workshop 2
  1. Extract init files
  2. Setup mongoose
- 3. Add movie model
+ 3. Add Movie model
  4. Convert file based storage to db storage
+ 5. Add Cast model
+ 6. Add create cast page
+
+
+* Add model validations
+* Fix filtering for movies
+* Add character name
