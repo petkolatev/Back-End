@@ -32,9 +32,9 @@ Bonus:
  - [x] Rating helper
  - [x] Fix filtering for movies
  - [x] Filter cast based on added ones
- - [ ] Add character name
- - [ ] Atlas
- - [ ] env file
+ - [x] Add character name
+ - [x] Atlas
+ - [x] env variable file
 
 Next time:
  - [ ] Add model validations
