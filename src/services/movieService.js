@@ -1,10 +1,8 @@
-import uniqid from 'uniqid';
+import Movie from '../models/Movie.js';
 
-import movieData from "../data/movieData.js";
-import { log } from 'console';
-
+// TODO: Refactor using db filtration
 const getAll = async (filter = {}) => {
-    let movies = await movieData.getAll();
+    let movies = await Movie.find();
 
     if (filter.search) {
         movies = movies.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()))
@@ -21,20 +19,9 @@ const getAll = async (filter = {}) => {
     return movies;
 };
 
-const create = (movie) => {
-    movie.id = uniqid();
-    movie.rating = Number(movie.rating);
+const create = (movie) => Movie.create(movie)
 
-    return movieData.create(movie)
-};
-
-const getOne = async (movieId) => {
-    const movies = await movieData.getAll();
-
-    const resultMovie = movies.find(movie => movie.id == movieId);
-
-    return resultMovie;
-}
+const getOne = (movieId) => Movie.findById(movieId);
 
 export default {
     getAll,
