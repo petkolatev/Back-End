@@ -31,3 +31,4 @@ JS Back-End Course Workshop @SoftUni
 * Add model validations
 * Fix filtering for movies
 * Add character name
+* Filter cast based on added ones
