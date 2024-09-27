@@ -5,10 +5,6 @@ import castService from "../services/castService.js";
 
 const router = Router();
 
-function toArray(documents) {
-    return documents.map(document => document.toObject());
-}
-
 // URL: /movies/create
 router.get('/create', (req, res) => {
     res.render('movies/create');
@@ -24,9 +20,9 @@ router.post('/create', async (req, res) => {
 
 router.get('/search', async (req, res) => {
     const filter = req.query;
-    const movies = await movieService.getAll(filter);
+    const movies = await movieService.getAll(filter).lean();
 
-    res.render('home', { isSearch: true, movies: toArray(movies), filter });
+    res.render('home', { isSearch: true, movies, filter });
 });
 
 router.get('/:movieId/details', async (req, res) => {
@@ -38,7 +34,7 @@ router.get('/:movieId/details', async (req, res) => {
 
 router.get('/:movieId/attach', async (req, res) => {
     const movie = await movieService.getOne(req.params.movieId).lean();
-    const casts = await castService.getAll().lean();
+    const casts = await castService.getAllWithout(movie.casts).lean();
 
     res.render('movies/attach', { movie, casts });
 });
@@ -46,10 +42,16 @@ router.get('/:movieId/attach', async (req, res) => {
 router.post('/:movieId/attach', async (req, res) => {
     const movieId = req.params.movieId;
     const castId = req.body.cast;
+    const character = req.body.character;
 
-    await movieService.attach(movieId, castId);
+    await movieService.attach(movieId, castId, character);
 
     res.redirect(`/movies/${movieId}/details`);
 });
+
+// Deprecated
+function toArray(documents) {
+    return documents.map(document => document.toObject());
+}
 
 export default router;

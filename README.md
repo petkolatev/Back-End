@@ -30,10 +30,11 @@ JS Back-End Course Workshop @SoftUni
    
 Bonus:
  - [x] Rating helper
- - [ ] Fix filtering for movies
- - [ ] Filter cast based on added ones
+ - [x] Fix filtering for movies
+ - [x] Filter cast based on added ones
  - [ ] Add character name
  - [ ] Atlas
+ - [ ] env file
 
 Next time:
  - [ ] Add model validations
