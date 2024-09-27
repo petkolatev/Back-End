@@ -25,6 +25,7 @@ JS Back-End Course Workshop @SoftUni
  4. Convert file based storage to db storage
  5. Add Cast model
  6. Add create cast page
+ 7. Add attach cast page
 
 
 * Add model validations
