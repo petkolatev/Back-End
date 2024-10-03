@@ -4,7 +4,6 @@ import { JWT_SECRET } from '../config/constants.js';
 
 export const authMiddleware = (req, res, next) => {
     const token = req.cookies['auth'];
-
     if (!token) {
         return next();
     }
@@ -12,12 +11,14 @@ export const authMiddleware = (req, res, next) => {
     try {
         const decodedToken = jwt.verify(token, JWT_SECRET)
 
-        console.log(decodedToken);
-
-        // TODO: Add user data to request
+        req.user = {
+            _id: decodedToken._id,
+            email: decodedToken.email,
+        };
 
         return next();
     } catch (err) {
+        console.log(err);
         res.clearCookie('auth');
 
         res.redirect('/auth/login')
