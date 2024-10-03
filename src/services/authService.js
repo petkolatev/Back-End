@@ -1,6 +1,9 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 import User from "../models/User.js";
+
+const SECRET = '98132hfsdiauhf874o2q3hfb420f9udias08u1213';
 
 const register = (email, password) => {
     // TODO: check if user exists
@@ -15,16 +18,20 @@ const login = async (email, password) => {
         throw new Error('User does not exist!');
     }
 
-    // TODO: validate password
     const isValid = await bcrypt.compare(password, user.password);
 
     if (!isValid) {
-        throw new Error('Password doesn not match');
+        throw new Error('Password does not match');
     }
 
-    // TODO: generate jwt token
+    const payload = {
+        _id: user._id,
+        email,
+    };
 
-    // TODO: Return jwt token
+    const token = jwt.sign(payload, SECRET, { expiresIn: '2h' });
+
+    return token;
 }
 
 export default {
