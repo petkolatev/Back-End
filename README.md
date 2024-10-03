@@ -37,7 +37,17 @@ Bonus:
  - [x] env variable file
 
 ## Developing Steps - Workshop 3 Authentication
- - [ ] Fix Bug from previous workshop
- - [ ] Add model validations
+ - [x] Fix Bug from previous workshop
+ - [ ] Add register page
+   - [ ] Add User model
+   - [ ] Add Auth controller
+   - [ ] Add auth service
+ - [ ] Add login page
+
+BONUS:
+ - [ ] Automatic login for registered users 
  - [ ] Select dropdown with prepopulated value
+
+## Next Time
+ - [ ] Add model validations
 
