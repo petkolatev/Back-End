@@ -52,9 +52,12 @@ router.post('/:movieId/attach', async (req, res) => {
     res.redirect(`/movies/${movieId}/details`);
 });
 
-// Deprecated
-function toArray(documents) {
-    return documents.map(document => document.toObject());
-}
+router.get('/:movieId/delete', async (req, res) => {
+    const movieId = req.params.movieId;
+
+    await movieService.remove(movieId);
+
+    res.redirect('/');
+});
 
 export default router;
