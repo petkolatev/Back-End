@@ -51,7 +51,8 @@ Bonus:
  - [x] Add owner relation to movie
  - [x] Add owner controll buttons in details page
  - [x] Delete movie
- - [ ] Edit movie
+ - [x] Edit movie
+ - [ ] Logout
  - [ ] Add dynamic navigation
 
 BONUS:
