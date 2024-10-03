@@ -42,11 +42,12 @@ Bonus:
    - [x] Add User model
    - [x] Add Auth controller
    - [x] Add auth service
- - [x] Hash password before save
+ - [x] Hash password before save `npm i bcrypt`
  - [x] Add login page
    - [x] validate hashed password
-   - [x] create jwt token
-   - [ ] add token to cookie
+   - [x] create jwt token `npm i jsonwebtoken`
+   - [x] add token to cookie `npm i cookie-parser`
+ - [ ] Add authorization
  - [ ] Add dynamic navigation
 
 BONUS:
