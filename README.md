@@ -52,8 +52,9 @@ Bonus:
  - [x] Add owner controll buttons in details page
  - [x] Delete movie
  - [x] Edit movie
- - [ ] Logout
- - [ ] Add dynamic navigation
+ - [x] Add dynamic navigation
+ - [x] Logout
+ - [ ] Add route guard
 
 BONUS:
  - [ ] Automatic login for registered users 
