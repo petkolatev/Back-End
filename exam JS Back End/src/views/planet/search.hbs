@@ -1,0 +1,30 @@
+<div class="search-form-container">
+    <form id="searchForm" class="search-form" method="GET">
+        <label for="name">Planet Name:</label>
+        <input type="text" id="name" name="name" value="{{query.name}}" placeholder="Enter planet name">
+
+        <label for="solarSystem">Solar System:</label>
+        <input type="text" id="solarSystem" name="solarSystem" value="{{query.solarSystem}}"
+            placeholder="Enter solar system">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div id="searchResults" class="search-results hidden">
+    {{#if planets}}
+    <h2>Matching Planets:</h2>
+    {{#each planets}}
+    <div class="planet-result">
+        <img src="{{image}}" alt="Planet X" class="planet-img">
+        <div class="planet-info">
+            <p><strong>Name:</strong> {{name}}</p>
+            <p><strong>Solar System:</strong> {{solarSystem}}</p>
+            <a class="detail-btn" href="/planet/{{_id}}/details">Details</a>
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p class="no-matches">There are no planets found yet!</p>
+    {{/if}}
+
+</div>
